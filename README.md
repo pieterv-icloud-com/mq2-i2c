@@ -14,7 +14,11 @@ Basing a lot of the work on these:
 
 [How MQ2 Gas/Smoke Sensor Works? & Interface it with Arduino](https://lastminuteengineers.com/mq2-gas-senser-arduino-tutorial/)
 
-I have an Arduino Trinket M0 for this project, so I will be implementing this in CircuitPython as a first try.
+I have an Adafruit Trinket M0 for this project, so I will be implementing this in CircuitPython as a first try.
+
+So i2cslave is not supported on the Trinket due to space constraints, could try and build from source:
+
+[CircuitPython Trinket M0 supports i2c slave? ](https://forums.adafruit.com/viewtopic.php?f=52&t=150431&p=744027&hilit=i2cslave#p744027)
 
 ## Device Details
 
