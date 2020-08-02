@@ -1,15 +1,6 @@
 import board
 from i2cslave import I2CSlave
 
-from file_handler import FileHandler
-import adafruit_logging as logging
-
-l = logging.getLogger('file')
-l.addHandler(FileHandler('/log.txt'))
-l.level = logging.DEBUG
-
-l.debug('Starting...')
-
 try:
     address = 0x29
 
@@ -38,4 +29,4 @@ try:
                         # A read transfer is not supported in this example
                         # If the Master tries, it will get 0xff byte(s) by the ctx manager (r.close())
 except Exception as e:
-    l.error(e)
+    print(e)
