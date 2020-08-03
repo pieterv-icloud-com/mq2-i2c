@@ -20,11 +20,30 @@ So i2cslave is not supported on the Trinket due to space constraints, could try 
 
 [CircuitPython Trinket M0 supports i2c slave? ](https://forums.adafruit.com/viewtopic.php?f=52&t=150431&p=744027&hilit=i2cslave#p744027)
 
+[Build Instructions](https://learn.adafruit.com/building-circuitpython/introduction)
+
+Edit: ports/atmel-samd/boards/trinket_m0/mpconfigboard.mk
+
+```C
+CIRCUITPY_I2CPERIPHERAL = 1
+CIRCUITPY_AUDIOIO = 0
+CIRCUITPY_AUDIOBUSIO = 0
+CIRCUITPY_BITBANGIO = 0
+CIRCUITPY_PULSEIO = 0
+```
+
+This will produce a build small enough so it will fit on the Trinket M0.
+
+**Note:** Building V6 here, so we are now using `I2CPeripheral` instead of `I2CSlave'.
+
 ## Device Details
 
 |||
 | ---| ---|
 | **Device Address:** | 0x29 |
+| **Device Address:** | 0x30 |
+
+`I2CPeriperal` constructor requires a tuple of addresses, not sure why.
 
 ## Register Map
 
